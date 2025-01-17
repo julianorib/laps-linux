@@ -1,0 +1,4 @@
+server: servidor
+user: usuario
+pass: senha
+base: domain.local

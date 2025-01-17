@@ -1,0 +1,28 @@
+---
+  - name: Copiar o Script LAPS.py
+    ansible.builtin.copy:
+      src: laps.py
+      dest: /opt/laps.py
+
+  - name: Verificar se tem o pip instalado
+    shell: python3 -m pip --version
+    register: result
+    ignore_errors: true
+
+  - name: Instalar Pip
+    ansible.builtin.package: 
+      name: python3-pip
+      state: present
+    when: result is failed
+
+  - name: Install Python Ldap3 Module
+    ansible.builtin.shell: python3 -m pip install ldap3
+
+  - name: Executar o LAPS
+    ansible.builtin.shell: python3 /opt/laps.py
+    environment:
+      SERVIDOR_LDAP: "{{ server }}"
+      USUARIO_LDAP: "{{ user }}"
+      SENHA_LDAP: "{{ pass }}"
+      BASE_DN: "{{ base }}"
+

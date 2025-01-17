@@ -1,0 +1,5 @@
+- name: Playbook
+  hosts: all
+  roles:
+    - laps
+
