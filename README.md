@@ -5,7 +5,7 @@ A conexão e alteração da senha é feita via protocolo LDAPS.\
 O atributo de computador que armazena a senha chama-se msLAPS-Password.
 
 No momento a senha não é criptografada como é feito no Windows.\
-No momento a opção de visualização de senha é somente via Aba "Editor de Atributos" ou via "Powershell".\
+No momento a opção de visualização de senha é somente via Aba "Editor de Atributos" ou via "Powershell".
 
 ## Configuração
 
@@ -17,6 +17,8 @@ Configure as variáveis de ambiente:
 - USUARIO_LDAP
 - SENHA_LDAP
 - BASE_DN
+
+Copie o script em roles/laps/files/laps.py para o Servidor Linux.
 
 Altere a permissão do arquivo para que somente o root tenha permissões:
 ```
