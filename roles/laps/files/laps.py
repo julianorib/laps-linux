@@ -110,10 +110,6 @@ def main():
     user = "root"
     alterar_senha_linux(user,nova_senha_msLAPS)
 
-    # Alterar a senha do sicoob no Linux
-    user = "sicoob"
-    alterar_senha_linux(user,nova_senha_msLAPS)
-
     # Fechar a conexão LDAP
     conn.unbind()
 
